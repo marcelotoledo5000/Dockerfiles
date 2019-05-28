@@ -1,9 +1,9 @@
-# TO USE: skygvinn/debian-ruby2.6-nodejs:v1.0
+# TO USE: skygvinn/debian-ruby2.6-nodejs:v1.1
 
-FROM ruby:2.6.0
+FROM ruby:2.6.3
 
 LABEL name="Debian-Ruby-2.6-NodeJS" \
-  version="1.0"
+  version="1.1"
 
 RUN apt-get update -y && \
   gem update --system && \
