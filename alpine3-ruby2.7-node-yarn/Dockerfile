@@ -1,13 +1,14 @@
-# TO USE: skygvinn/alpine-ruby2.7.0-node-yarn:v1.0
+# TO USE: skygvinn/alpine3-ruby2.7-nodejs:v1.1
 
-FROM ruby:2.7.0-alpine3.10
+FROM ruby:2.7-alpine3.11
 
-LABEL name="Alpine-Ruby-2.7.0-Node-Yarn" \
-  version="1.0"
+LABEL name="Alpine3-Ruby-2.7-Node-Yarn" \
+  version="1.1"
 
 RUN apk add --update --no-cache \
   build-base \
   bash \
+  cmake \
   coreutils \
   git \
   nodejs \
