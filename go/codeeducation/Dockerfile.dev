@@ -1,18 +1,19 @@
 # TO USE: docker run skygvinn/codeeducation
 
-FROM golang:1.17.2-alpine AS development
+FROM golang:1.17.2-alpine
 
 LABEL name="Alpine3.14-Golang1.17.2" \
   version="1.0" \
   author="Marcelo Toledo, aka Skygvinn"
 
-WORKDIR /go/src
-COPY ./src/codeeducation.go .
-RUN go mod init src && \
-    go build -o codeeducation.go
+WORKDIR /src
 
-FROM scratch
-WORKDIR /app
-COPY --from=development /go/src .
+COPY ./src/codeeducation.go .
+
+RUN go mod init app
+
 EXPOSE 8080
+
+ENTRYPOINT go run .
+
 CMD ["./codeeducation.go"]
