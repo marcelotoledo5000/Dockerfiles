@@ -1,0 +1,15 @@
+# TO USE: skygvinn/welcome-express
+
+FROM node:15
+
+LABEL name="Node.js 15 + NPM + Express" \
+      version="1.0" \
+      author="Marcelo Toledo, aka Skygvinn"
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+EXPOSE 3000
+
+CMD [ "node", "index.js" ]

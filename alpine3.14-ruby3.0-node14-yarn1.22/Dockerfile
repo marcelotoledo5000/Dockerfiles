@@ -9,7 +9,6 @@ LABEL name="Alpine3.14-Ruby-3.0-Node14.18-Yarn1.22" \
 RUN apk add --update --no-cache \
     bash \
     build-base \
-    cmake \
     coreutils \
     git \
     nodejs \
@@ -27,6 +26,7 @@ RUN echo "HISTFILESIZE=5000" >> ~/.zshrc
 RUN echo "alias reload='source ~/.zshrc'" >> ~/.zshrc
 RUN echo "alias rails='bundle exec rails'" >> ~/.zshrc
 RUN echo "alias vim='vi'" >> ~/.zshrc
+# RUN echo "/bin/zsh" >> ~/.zshrc
 
 ENTRYPOINT /bin/zsh
 
